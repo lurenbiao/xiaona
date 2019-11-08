@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <!-- 小娜3.0 -->
     <!-- // 把小娜也看成对象
@@ -30,53 +32,69 @@
     */ -->
 </body>
 <script>
-         function xiaoNa(){
-            this.ask=function(){
-                var zhi=prompt('请输入一下的数字或者关键字\n输入1或者总和，可以求总和\n输入2或者时间，可以得到现在的时间\n输入3或者笑话，可以讲笑话，\n输入q退出');
-                return zhi;
+    function xiaoNa() {
+        this.ask = function () {
+            var zhi = prompt('请输入一下的数字或者关键字\n输入1或者总和，可以求总和\n输入2或者时间，可以得到现在的时间\n输入3或者笑话，可以讲笑话，\n输入q退出');
+            return zhi;
+        }
+        this.one = function () {
+            var a = prompt('请输入要求和的数字，以逗号隔开');
+            var arr = a.split(',');
+            var sum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                sum += parseFloat(arr[i]);
             }
-            this.one=function(){
-                var a=prompt('请输入要求和的数字，以逗号隔开');
-                var arr=a.split(',');
-                var sum=0;
-                for(var i=0;i<arr.length;i++){
-                    sum+=parseFloat(arr[i]);
-                }
-                alert(sum);
-            }
-            this.two=function(){
-                var date=new Date();
-                var year=date.getFullYear();
-                var month=date.getMonth()+1;
-                var day=date.getDate();
-                var hours=date.getHours();
-                var mind=date.getMinutes();
-                var s=date.getSeconds();
-                month=month<10?"0"+month:month;
-                day=day<10?"0"+day:day;
-                hours=hours<10?"0"+hours:hours;
-                mind=mind<10?"0"+mind:mind;
-                s=s<10?"0"+s:s;
-                alert(year+"-"+month+"-"+day+"-"+hours+":"+mind+":"+s);
-            }
-         }
+            alert(sum);
+        }
+        this.two = function () {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hours = date.getHours();
+            var mind = date.getMinutes();
+            var s = date.getSeconds();
+            month = month < 10 ? "0" + month : month;
+            day = day < 10 ? "0" + day : day;
+            hours = hours < 10 ? "0" + hours : hours;
+            mind = mind < 10 ? "0" + mind : mind;
+            s = s < 10 ? "0" + s : s;
+            alert(year + "-" + month + "-" + day + "-" + hours + ":" + mind + ":" + s);
+        }
+
+        this.three = function () {
+            var xiaohua = ['笑话1', '笑话2', '笑话3', '笑话4', '笑话5'];
+            var a = Math.floor(Math.random() * xiaohua.length);
+            alert(xiaohua[a]);
+        }
+        this.talk = function () {
+            alert('小娜听不懂你在说什么；请说些容易听懂的话');
+        }
+    }
 
 
 
-        // 调用开始
-         var xiaona=new xiaoNa(); 
-         while(true){
-             var n=xiaona.ask();
-            if(n=='q'){
-                break;
-            }
-            switch(n){
-                case'1':
+    // 调用开始
+    var xiaona = new xiaoNa();
+    while (true) {
+        var n = xiaona.ask();
+        if (n == 'q') {
+            break;
+        }
+        switch (n) {
+            case '1':
                 xiaona.one();
-                case'2':
+                break;
+            case '2':
                 xiaona.two();
-                
-            }
-         }
+                break;
+            case '3':
+                xiaona.three();
+                break;
+            default:
+                xiaona.talk();
+        }
+    }
 </script>
+
 </html>
