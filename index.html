@@ -37,18 +37,46 @@
             }
             this.one=function(){
                 var a=prompt('请输入要求和的数字，以逗号隔开');
-                var arr=a.sqlit(',');
+                var arr=a.split(',');
                 var sum=0;
-                for(var i=0;i<a.length;i++){
-                    sun+=arr.i;
+                for(var i=0;i<arr.length;i++){
+                    sum+=parseFloat(arr[i]);
                 }
                 alert(sum);
             }
-        }
+            this.two=function(){
+                var date=new Date();
+                var year=date.getFullYear();
+                var month=date.getMonth()+1;
+                var day=date.getDate();
+                var hours=date.getHours();
+                var mind=date.getMinutes();
+                var s=date.getSeconds();
+                month=month<10?"0"+month:month;
+                day=day<10?"0"+day:day;
+                hours=hours<10?"0"+hours:hours;
+                mind=mind<10?"0"+mind:mind;
+                s=s<10?"0"+s:s;
+                alert(year+"-"+month+"-"+day+"-"+hours+":"+mind+":"+s);
+            }
+         }
 
 
 
         // 调用开始
-     
+         var xiaona=new xiaoNa(); 
+         while(true){
+             var n=xiaona.ask();
+            if(n=='q'){
+                break;
+            }
+            switch(n){
+                case'1':
+                xiaona.one();
+                case'2':
+                xiaona.two();
+                
+            }
+         }
 </script>
 </html>
