@@ -7,8 +7,48 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 小娜3.0 -->
+    <!-- // 把小娜也看成对象
+    /*
+      分析小娜的特征和行为
+        特征：
     
+        行为：
+          询问
+          退出 - 没法写到小娜的行为里面来
+          计算总和
+          显示日期
+          讲笑话
+          蒙
+    */
+    // 先给一个构造函数，到时候new一个小娜，每次在循环里面指挥小娜做事情
+    /*
+      面向对象开发的过程：
+        1.先封装好所有的对象
+        2.找对象
+        3.在合适的地方指挥对象去做事情 调用对象的方法或者属性
+    */ -->
 </body>
 <script>
+         function xiaoNa(){
+            this.ask=function(){
+                var zhi=prompt('请输入一下的数字或者关键字\n输入1或者总和，可以求总和\n输入2或者时间，可以得到现在的时间\n输入3或者笑话，可以讲笑话，\n输入q退出');
+                return zhi;
+            }
+            this.one=function(){
+                var a=prompt('请输入要求和的数字，以逗号隔开');
+                var arr=a.sqlit(',');
+                var sum=0;
+                for(var i=0;i<a.length;i++){
+                    sun+=arr.i;
+                }
+                alert(sum);
+            }
+        }
+
+
+
+        // 调用开始
+     
 </script>
 </html>
